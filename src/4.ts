@@ -30,9 +30,7 @@ abstract class House {
 }
 
 class MyHouse extends House {
-  constructor(public key: Key) {
-    super();
-  }
+  
   public openDoor(key: Key): void {
     if (key.getSignature() === this.key.getSignature()) {
       this.door = true;
@@ -44,7 +42,7 @@ class MyHouse extends House {
 
 const key = new Key();
 
-const house = new MyHouse(key);
+const house = new MyHouse();
 const person = new Person(key);
 
 house.openDoor(person.getKey());
